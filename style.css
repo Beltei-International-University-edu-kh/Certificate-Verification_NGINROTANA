@@ -1,0 +1,80 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background-color: rgb(14, 14, 14);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewer {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#certificate {
+    display: block;
+    width: 239px;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    cursor: zoom-in;
+    background-color: hsl(0, 0%, 90%);
+    transition: background-color 300ms;
+    user-select: none;
+}
+
+/* Zoom viewer */
+
+.zoom-viewer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.zoom-viewer.active {
+    display: flex;
+}
+
+#zoomImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    cursor: zoom-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    #certificate {
+        width: min(239px, 100%);
+    }
+}
